@@ -1,0 +1,415 @@
+{
+	"info": {
+		"_postman_id": "398bb6d4-705c-4a85-ad2f-174c14246d73",
+		"name": "VendorManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9832770",
+		"_collection_link": "https://letsgowithme.postman.co/workspace/Private-WorkSpace~94261b6c-4978-49f6-a230-95085dba1c53/collection/9832770-398bb6d4-705c-4a85-ad2f-174c14246d73?action=share&source=collection_link&creator=9832770"
+	},
+	"item": [
+		{
+			"name": "Vendor",
+			"item": [
+				{
+					"name": "Create New Vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Vendor sub-supervisor\",\r\n  \"address\": \"The Nest, 202, SVBS Nagar Colony\",\r\n  \"contact_details\": \"+919999999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Vendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vendor Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/aac9d33b-49cf-46e4-b36e-d7c5d72ec301/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"aac9d33b-49cf-46e4-b36e-d7c5d72ec301",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Vendor Information",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Super Vendor\",\r\n  \"address\": \"The Nest, 202, SVBS Nagar Colony, Bandlaguda Jagir\",\r\n  \"contact_details\": \"+919999999999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/5089eead-a2fc-4b89-8f7a-ea92beb7ceca/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"5089eead-a2fc-4b89-8f7a-ea92beb7ceca",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Vendor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/3491aec1-7bd4-4607-97d2-b97a4d4b74ae/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"3491aec1-7bd4-4607-97d2-b97a4d4b74ae",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vendor Performance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/vendors/5089eead-a2fc-4b89-8f7a-ea92beb7ceca/performance/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendors",
+								"5089eead-a2fc-4b89-8f7a-ea92beb7ceca",
+								"performance",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase Order",
+			"item": [
+				{
+					"name": "Create Purchase Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vendor\": \"5089eead-a2fc-4b89-8f7a-ea92beb7ceca\",\r\n  \"delivery_date\": \"2024-05-15T00:00:00Z\",\r\n  \"items\": [\r\n    {\r\n      \"product_name\": \"Product I\",\r\n      \"quantity\": 5,\r\n      \"unit_price\": 10.50\r\n    },\r\n    {\r\n      \"product_name\": \"Product J\",\r\n      \"quantity\": 5,\r\n      \"unit_price\": 15.75\r\n    }\r\n  ],\r\n  \"quantity\": 10\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Purchased Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/5344dd1e-b40e-4354-bf50-93ea36c98a1d/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"5344dd1e-b40e-4354-bf50-93ea36c98a1d",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Information",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"vendor\": \"5089eead-a2fc-4b89-8f7a-ea92beb7ceca\",\r\n  \"delivery_date\": \"2024-05-15T00:00:00Z\",\r\n  \"items\": [\r\n    {\r\n      \"product_name\": \"Product A\",\r\n      \"quantity\": 15,\r\n      \"unit_price\": 10.50\r\n    },\r\n    {\r\n      \"product_name\": \"Product B\",\r\n      \"quantity\": 5,\r\n      \"unit_price\": 15.75\r\n    }\r\n  ],\r\n  \"quantity\": 20\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/5344dd1e-b40e-4354-bf50-93ea36c98a1d/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"5344dd1e-b40e-4354-bf50-93ea36c98a1d",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Purchased Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/e9a608b1-77a3-45c9-9f58-c7ec984066b9/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"e9a608b1-77a3-45c9-9f58-c7ec984066b9",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Acknowledge Purchased Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/5344dd1e-b40e-4354-bf50-93ea36c98a1d/acknowledge/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"5344dd1e-b40e-4354-bf50-93ea36c98a1d",
+								"acknowledge",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order Completed/Delivered",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/5344dd1e-b40e-4354-bf50-93ea36c98a1d/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"5344dd1e-b40e-4354-bf50-93ea36c98a1d",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quality Rating",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quality_rating\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/purchase_orders/23ccb889-1a17-4bf2-83cc-c7afd4d3ae7a/quality_rating/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"purchase_orders",
+								"23ccb889-1a17-4bf2-83cc-c7afd4d3ae7a",
+								"quality_rating",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
